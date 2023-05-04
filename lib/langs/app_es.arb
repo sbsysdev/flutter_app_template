@@ -1,0 +1,5 @@
+{
+    "appTitle": "Plantilla de aplicación",
+    "homeView": "Vista principal",
+    "custom": "¡Hola {userName}!"
+}

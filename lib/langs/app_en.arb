@@ -1,0 +1,20 @@
+{
+    "appTitle": "App template",
+    "@appTitle": {
+        "description": "The application title"
+    },
+    "homeView": "Home view",
+    "@homeView": {
+        "description": "The home view title"
+    },
+    "custom": "Hello {userName}!",
+    "@custom": {
+        "description": "A hello to a user param",
+        "placeholders": {
+            "userName": {
+                "type": "String",
+                "example": "Steven Bustillo"
+            }
+        }
+    }
+}

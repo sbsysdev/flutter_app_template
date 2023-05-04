@@ -1,0 +1,4 @@
+arb-dir: lib/langs
+template-arb-file: app_en.arb
+output-localization-file: langs.dart
+output-class: Langs
