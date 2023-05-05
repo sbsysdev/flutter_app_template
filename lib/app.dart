@@ -4,6 +4,8 @@ import 'package:flutter_gen/gen_l10n/langs.dart';
 // configs
 import 'package:app/configs/settings_config.dart';
 import 'package:app/configs/routes_config.dart';
+// types
+import 'package:app/types/font_families.dart';
 
 class App extends StatelessWidget {
   final SettingsConfig settingsConfig;
@@ -32,10 +34,16 @@ class App extends StatelessWidget {
 
           // theme
           themeMode: settingsConfig.themeMode,
-          theme: ThemeData.light().copyWith(
+          theme: ThemeData(
+            fontFamily:
+                settingsConfig.theme.baseTheme.fontFamily[FontFamilies.main],
+          ).copyWith(
             extensions: [settingsConfig.theme.baseTheme],
           ),
-          darkTheme: ThemeData.dark().copyWith(
+          darkTheme: ThemeData(
+            fontFamily:
+                settingsConfig.theme.baseTheme.fontFamily[FontFamilies.main],
+          ).copyWith(
             extensions: [settingsConfig.theme.darkTheme],
           ),
 

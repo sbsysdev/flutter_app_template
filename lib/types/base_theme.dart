@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 // types
 import 'package:app/types/sizes.dart';
+import 'package:app/types/font_families.dart';
 
 class BaseTheme extends ThemeExtension<BaseTheme> {
   // Base palette
@@ -30,6 +31,9 @@ class BaseTheme extends ThemeExtension<BaseTheme> {
   final Map<Sizes, double> component;
   final Map<Sizes, double> view;
 
+  // Fonts
+  final Map<FontFamilies, String> fontFamily;
+
   BaseTheme({
     // Base palette
     required this.font,
@@ -53,6 +57,8 @@ class BaseTheme extends ThemeExtension<BaseTheme> {
     required this.element,
     required this.component,
     required this.view,
+    // Fonts
+    required this.fontFamily,
   });
 
   @override
@@ -79,6 +85,8 @@ class BaseTheme extends ThemeExtension<BaseTheme> {
     Map<Sizes, double>? element,
     Map<Sizes, double>? component,
     Map<Sizes, double>? view,
+    // Fonts
+    Map<FontFamilies, String>? fontFamily,
   }) {
     return BaseTheme(
       // Base palette
@@ -103,6 +111,8 @@ class BaseTheme extends ThemeExtension<BaseTheme> {
       element: element ?? this.element,
       component: component ?? this.component,
       view: view ?? this.view,
+      // Fonts
+      fontFamily: fontFamily ?? this.fontFamily,
     );
   }
 

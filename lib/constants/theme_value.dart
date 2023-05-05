@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 // types
 import 'package:app/types/base_theme.dart';
 import 'package:app/types/sizes.dart';
+import 'package:app/types/font_families.dart';
 
 class ThemeValue {
   // Base palette
@@ -246,6 +247,13 @@ class ThemeValue {
         Sizes.xxxl: 1.0,
       };
 
+  // Fonts
+
+  get fontFamily => {
+        FontFamilies.main: 'Montserrat',
+        FontFamilies.number: 'Roboto',
+      };
+
   // Base theme
   BaseTheme get baseTheme => BaseTheme(
         // Base palette
@@ -270,6 +278,8 @@ class ThemeValue {
         element: element,
         component: component,
         view: view,
+        // Fonts
+        fontFamily: fontFamily,
       );
 
   // Dark theme
