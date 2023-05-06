@@ -1,7 +1,7 @@
 // flutter
 import 'package:flutter/material.dart';
-import 'package:qr_flutter/qr_flutter.dart';
-import 'package:mobile_scanner/mobile_scanner.dart';
+import 'package:barcode_widget/barcode_widget.dart';
+import 'package:mobile_scanner/mobile_scanner.dart' as scanner;
 // types
 import 'package:app/types/base_theme.dart';
 
@@ -94,11 +94,27 @@ class QrView extends StatelessWidget {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   const Text('Generate QR'),
-                  Center(
-                    child: QrImage(
-                      data: 'Lamisma123*',
-                      backgroundColor: Colors.white,
-                    ),
+                  Stack(
+                    alignment: Alignment.center,
+                    children: [
+                      BarcodeWidget(
+                        padding: const EdgeInsets.all(4.0),
+                        barcode: Barcode.qrCode(
+                          errorCorrectLevel: BarcodeQRCorrectionLevel.high,
+                        ),
+                        backgroundColor: Colors.white,
+                        color: theme.primary,
+                        data: 'Lamisma123*',
+                        width: 300,
+                        height: 300,
+                      ),
+                      Container(
+                        color: Colors.white,
+                        width: 60,
+                        height: 60,
+                        child: const FlutterLogo(),
+                      ),
+                    ],
                   ),
                   ElevatedButton(
                     onPressed: () {
@@ -137,16 +153,16 @@ class QrView extends StatelessWidget {
                   const Text('Scan QR'),
                   SizedBox(
                     height: 300,
-                    child: MobileScanner(
+                    child: scanner.MobileScanner(
                       fit: BoxFit.contain,
-                      controller: MobileScannerController(
-                        detectionSpeed: DetectionSpeed.normal,
+                      controller: scanner.MobileScannerController(
+                        detectionSpeed: scanner.DetectionSpeed.normal,
                         detectionTimeoutMs: 500,
-                        facing: CameraFacing.back,
+                        facing: scanner.CameraFacing.back,
                         torchEnabled: true,
                       ),
-                      onDetect: (barcodes) {
-                        final List<Barcode> codes = barcodes.barcodes;
+                      onDetect: (capture) {
+                        final List<scanner.Barcode> codes = capture.barcodes;
 
                         for (final code in codes) {
                           debugPrint('Barcode found! ${code.rawValue}');

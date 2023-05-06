@@ -18,7 +18,7 @@ dependencies:
   shared_preferences: ^2.1.0
   socket_io_client: ^2.0.2
   http: ^0.13.6
-  qr_flutter: ^4.0.0
+  barcode_widget: ^2.0.1
   mobile_scanner: ^3.2.0
 
 dev_dependencies:
