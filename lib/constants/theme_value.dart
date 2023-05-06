@@ -38,7 +38,7 @@ class ThemeValue {
 
   // Primary palette
 
-  static const _primaryPrimary = 0xFF000000;
+  static const _primaryPrimary = 0xFF0000FF;
   get primary => const MaterialColor(_primaryPrimary, {
         50: Color(0xFFFFFFFF),
         100: Color(0xFFFFFFFF),

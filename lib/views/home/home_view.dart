@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/langs.dart';
 // views
 import 'package:app/views/settings/settings_view.dart';
+import 'package:app/views/qr/qr_view.dart';
 // types
 import 'package:app/types/base_theme.dart';
 
@@ -24,6 +25,12 @@ class HomeView extends StatelessWidget {
               icon: const Icon(Icons.settings),
               onPressed: () {
                 Navigator.restorablePushNamed(context, SettingsView.routeName);
+              },
+            ),
+            IconButton(
+              icon: const Icon(Icons.qr_code),
+              onPressed: () {
+                Navigator.restorablePushNamed(context, QrView.routeName);
               },
             ),
           ],
