@@ -1,4 +1,0 @@
-enum FontFamilies {
-  main,
-  number,
-}

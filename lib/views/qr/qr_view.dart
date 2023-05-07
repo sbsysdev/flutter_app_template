@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:barcode_widget/barcode_widget.dart';
 import 'package:mobile_scanner/mobile_scanner.dart' as scanner;
 // types
-import 'package:app/types/base_theme.dart';
+import 'package:app/types/theme.dart';
 
 class QrView extends StatelessWidget {
   const QrView({super.key});
@@ -11,7 +11,7 @@ class QrView extends StatelessWidget {
   static const routeName = '/qr';
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context).extension<BaseTheme>()!;
+    final theme = Theme.of(context).extension<AppTheme>()!;
 
     return SafeArea(
         child: Scaffold(
@@ -33,14 +33,14 @@ class QrView extends StatelessWidget {
                     width: double.infinity,
                     decoration: BoxDecoration(
                       borderRadius: const BorderRadius.all(Radius.circular(8)),
-                      color: theme.primary,
+                      color: theme.current.colors.primary,
                     ),
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Center(
                         child: Text(
                           'Generate QR',
-                          style: TextStyle(color: theme.font.shade100),
+                          style: TextStyle(color: theme.dark.colors.font),
                         ),
                       ),
                     )),
@@ -54,14 +54,14 @@ class QrView extends StatelessWidget {
                     width: double.infinity,
                     decoration: BoxDecoration(
                       borderRadius: const BorderRadius.all(Radius.circular(8)),
-                      color: theme.primary,
+                      color: theme.current.colors.primary,
                     ),
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Center(
                         child: Text(
                           'Scan QR',
-                          style: TextStyle(color: theme.font.shade100),
+                          style: TextStyle(color: theme.dark.colors.font),
                         ),
                       ),
                     )),
@@ -75,7 +75,7 @@ class QrView extends StatelessWidget {
   }
 
   Future<dynamic> _showGenerateQR(BuildContext context) {
-    final theme = Theme.of(context).extension<BaseTheme>()!;
+    final theme = Theme.of(context).extension<AppTheme>()!;
 
     return showDialog(
       context: context,
@@ -87,13 +87,18 @@ class QrView extends StatelessWidget {
             backgroundColor: Colors.transparent,
             child: Container(
               decoration: BoxDecoration(
-                color: theme.primary,
+                color: theme.current.colors.primary,
                 borderRadius: BorderRadius.circular(8.0),
               ),
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  const Text('Generate QR'),
+                  Text(
+                    'Generate QR',
+                    style: TextStyle(
+                      color: theme.dark.colors.font,
+                    ),
+                  ),
                   Stack(
                     alignment: Alignment.center,
                     children: [
@@ -103,7 +108,7 @@ class QrView extends StatelessWidget {
                           errorCorrectLevel: BarcodeQRCorrectionLevel.high,
                         ),
                         backgroundColor: Colors.white,
-                        color: theme.primary,
+                        color: theme.current.colors.primary,
                         data: 'Lamisma123*',
                         width: 300,
                         height: 300,
@@ -132,7 +137,7 @@ class QrView extends StatelessWidget {
   }
 
   Future<dynamic> _showScanQR(BuildContext context) {
-    final theme = Theme.of(context).extension<BaseTheme>()!;
+    final theme = Theme.of(context).extension<AppTheme>()!;
 
     return showDialog(
       context: context,
@@ -144,13 +149,18 @@ class QrView extends StatelessWidget {
             backgroundColor: Colors.transparent,
             child: Container(
               decoration: BoxDecoration(
-                color: theme.primary,
+                color: theme.current.colors.primary,
                 borderRadius: BorderRadius.circular(8.0),
               ),
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  const Text('Scan QR'),
+                  Text(
+                    'Scan QR',
+                    style: TextStyle(
+                      color: theme.dark.colors.font,
+                    ),
+                  ),
                   SizedBox(
                     height: 300,
                     child: scanner.MobileScanner(

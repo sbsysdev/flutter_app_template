@@ -5,7 +5,7 @@ import 'package:flutter_gen/gen_l10n/langs.dart';
 import 'package:app/views/settings/settings_view.dart';
 import 'package:app/views/qr/qr_view.dart';
 // types
-import 'package:app/types/base_theme.dart';
+import 'package:app/types/theme.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({Key? key}) : super(key: key);
@@ -14,7 +14,7 @@ class HomeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context).extension<BaseTheme>()!;
+    final theme = Theme.of(context).extension<AppTheme>()!;
 
     return SafeArea(
       child: Scaffold(
@@ -35,8 +35,13 @@ class HomeView extends StatelessWidget {
             ),
           ],
         ),
-        body: Text("Home view body",
-            style: TextStyle(color: theme.font, backgroundColor: theme.bg)),
+        body: Text(
+          "Home view body",
+          style: TextStyle(
+            color: theme.current.colors.font,
+            backgroundColor: theme.current.colors.bg,
+          ),
+        ),
       ),
     );
   }
