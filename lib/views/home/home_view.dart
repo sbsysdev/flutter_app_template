@@ -5,7 +5,7 @@ import 'package:flutter_gen/gen_l10n/langs.dart';
 import 'package:app/views/settings/settings_view.dart';
 import 'package:app/views/qr/qr_view.dart';
 // types
-import 'package:app/types/theme.dart';
+import 'package:app/shared/types/theme.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({Key? key}) : super(key: key);

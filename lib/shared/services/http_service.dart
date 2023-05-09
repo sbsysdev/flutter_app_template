@@ -3,11 +3,11 @@ import 'dart:async';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 // constants
-import 'package:app/constants/env_value.dart';
+import 'package:app/shared/constants/env_value.dart';
 // types
-import 'package:app/types/response.dart';
-import 'package:app/types/response_factory.dart';
-import 'package:app/types/request_factory.dart';
+import 'package:app/shared/types/response.dart';
+import 'package:app/shared/types/response_factory.dart';
+import 'package:app/shared/types/request_factory.dart';
 
 class HttpService {
   final String baseURL;

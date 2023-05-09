@@ -1,7 +1,7 @@
 // flutter
 import 'package:flutter/material.dart';
 // types
-import 'package:app/types/theme.dart';
+import 'package:app/shared/types/theme.dart';
 
 class ThemeValue {
   // Colors

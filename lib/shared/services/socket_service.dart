@@ -1,7 +1,7 @@
 // flutter
 import 'package:socket_io_client/socket_io_client.dart' as io;
 // constants
-import 'package:app/constants/env_value.dart';
+import 'package:app/shared/constants/env_value.dart';
 
 class SocketService {
   late io.Socket _client;

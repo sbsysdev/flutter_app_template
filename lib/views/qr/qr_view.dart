@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:barcode_widget/barcode_widget.dart';
 import 'package:mobile_scanner/mobile_scanner.dart' as scanner;
 // types
-import 'package:app/types/theme.dart';
+import 'package:app/shared/types/theme.dart';
 
 class QrView extends StatelessWidget {
   const QrView({super.key});

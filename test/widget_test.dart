@@ -2,7 +2,7 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:flutter/material.dart';
 // services
-import 'package:app/services/settings_service.dart';
+import 'package:app/shared/services/settings_service.dart';
 // configs
 import 'package:app/configs/settings_config.dart';
 // app

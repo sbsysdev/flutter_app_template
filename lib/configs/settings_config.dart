@@ -1,9 +1,9 @@
 // flutter
 import 'package:flutter/material.dart';
 // services
-import 'package:app/services/settings_service.dart';
+import 'package:app/shared/services/settings_service.dart';
 // constants
-import 'package:app/constants/theme_value.dart';
+import 'package:app/shared/constants/theme_value.dart';
 
 class SettingsConfig with ChangeNotifier {
   final SettingsService _settingsService;
